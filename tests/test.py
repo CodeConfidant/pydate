@@ -2,9 +2,9 @@
 
 import sys, os
 
-sys.path.append(os.path.abspath("../pydate-date/pydate"))
+sys.path.append(os.path.abspath("../pydate-time/pydate"))
 
-from pydate import Year, Date, Time, DateTime
+from pydate_time import Year, Date, Time, DateTime
 
 demo_year = Year(2020)
 demo_date = Date(2020, 4, 26)
