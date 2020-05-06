@@ -49,6 +49,22 @@
 	</tr>
     <tr>
 		<td>
+            <code>inc_year()</code>
+        </td>
+		<td>
+            Increment the year attribute value by 1.
+        </td>
+	</tr>
+    <tr>
+		<td>
+            <code>dec_year()</code>
+        </td>
+		<td>
+            Decrement the year attribute value by 1.
+        </td>
+	</tr>
+    <tr>
+		<td>
             <code>tostring()</code>
         </td>
 		<td>
@@ -120,6 +136,38 @@
         </td>
 		<td>
             Change the day attribute value.
+        </td>
+	</tr>
+    <tr>
+		<td>
+            <code>inc_month()</code>
+        </td>
+		<td>
+            Increment the month attribute value by 1.
+        </td>
+	</tr>
+    <tr>
+		<td>
+            <code>inc_day()</code>
+        </td>
+		<td>
+            Increment the day attribute value by 1.
+        </td>
+	</tr>
+    <tr>
+		<td>
+            <code>dec_month()</code>
+        </td>
+		<td>
+            Decrement the month attribute value by 1.
+        </td>
+	</tr>
+    <tr>
+		<td>
+            <code>dec_day()</code>
+        </td>
+		<td>
+            Decrement the day attribute value by 1.
         </td>
 	</tr>
     <tr>
@@ -218,6 +266,54 @@
         </td>
 		<td>
             Change the second attribute value.
+        </td>
+	</tr>
+    <tr>
+		<td>
+            <code>inc_hour()</code>
+        </td>
+		<td>
+            Increment the hour attribute value by 1.
+        </td>
+	</tr>
+    <tr>
+		<td>
+            <code>inc_minute()</code>
+        </td>
+		<td>
+            Increment the minute attribute value by 1.
+        </td>
+	</tr>
+    <tr>
+		<td>
+            <code>inc_second()</code>
+        </td>
+		<td>
+            Increment the second attribute value by 1.
+        </td>
+	</tr>
+    <tr>
+		<td>
+            <code>dec_hour()</code>
+        </td>
+		<td>
+            Decrement the hour attribute value by 1.
+        </td>
+	</tr>
+    <tr>
+		<td>
+            <code>dec_minute()</code>
+        </td>
+		<td>
+            Decrement the minute attribute value by 1.
+        </td>
+	</tr>
+    <tr>
+		<td>
+            <code>dec_second()</code>
+        </td>
+		<td>
+            Decrement the second attribute value by 1.
         </td>
 	</tr>
     <tr>
