@@ -22,6 +22,10 @@ get_year() 	                Return the year attribute value.
 
 set_year(year) 	            Change the year attribute value.
 
+inc_year() 	                Increment the year attribute value by 1.
+
+dec_year() 	                Decrement the year attribute value by 1. 
+
 tostring() 	                Return a string representing the Year class attribute values. 
 
 -----------
@@ -43,6 +47,14 @@ get_day() 	                Return the day attribute value.
 set_month(month) 	        Change the month attribute value.
 
 set_day(day) 	            Change the day attribute value.
+
+inc_month() 	            Increment the month attribute value by 1.
+
+inc_day() 	                Increment the day attribute value by 1.
+
+dec_month() 	            Decrement the month attribute value by 1.
+
+dec_day() 	                Decrement the day attribute value by 1. 
 
 tostring() 	                Return a string representing the Date class attribute values.
 
@@ -70,6 +82,18 @@ set_hour(hour) 	            Change the hour attribute value.
 set_minute(minute) 	        Change the minute attribute value.
 
 set_second(second) 	        Change the second attribute value.
+
+inc_hour() 	                Increment the hour attribute value by 1.
+
+inc_minute() 	            Increment the minute attribute value by 1.
+
+inc_second() 	            Increment the second attribute value by 1.
+
+dec_hour() 	                Decrement the hour attribute value by 1.
+
+dec_minute() 	            Decrement the minute attribute value by 1.
+
+dec_second() 	            Decrement the second attribute value by 1. 
 
 tostring() 	                Return a string representing the Time class attribute values.
 
