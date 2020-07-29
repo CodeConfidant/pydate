@@ -2,11 +2,10 @@
 
     A Python package made to format date & time strings for use in various SQL RDBMS.
 
-    Make sure to have the latest version of Python 3 installed although this should work with previous versions. 
-    Pip and git also need to be installed for package installation with command line.  
+    Make sure to have the latest version of Python 3 installed although this should work with previous versions.  
 
-    To install/update the package with pip enter command in terminal:
-        pip install git+https://github.com/CodeConfidant/pydate-time.git#egg=pydate-time
+    To install the package with pip enter command in terminal:
+        pip install pydate
 
     To uninstall the package with pip enter command in terminal:
         pip uninstall pydate
@@ -120,6 +119,14 @@
         </td>
 		<td>
             Return the day attribute value.
+        </td>
+	</tr>
+    <tr>
+		<td>
+            <code>get_gregorian()</code>
+        </td>
+		<td>
+            Return the Gregorian month name.
         </td>
 	</tr>
     <tr>

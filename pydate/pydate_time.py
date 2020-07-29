@@ -73,6 +73,33 @@ class Date(Year):
     def get_day(self):
         return self.day
 
+    # Return the Gregorian month name.
+    def get_gregorian(self):
+        if (self.month == 1):
+            return "January"
+        elif (self.month == 2):
+            return "February"
+        elif (self.month == 3):
+            return "March"
+        elif (self.month == 4):
+            return "April"
+        elif (self.month == 5):
+            return "May"
+        elif (self.month == 6):
+            return "June"
+        elif (self.month == 7):
+            return "July"
+        elif (self.month == 8):
+            return "August"
+        elif (self.month == 9):
+            return "September"
+        elif (self.month == 10):
+            return "October"
+        elif (self.month == 11):
+            return "November"
+        elif (self.month == 12):
+            return "December"
+
     # Change the month attribute value. 
     def set_month(self, month):
         if (type(month) is not int):
