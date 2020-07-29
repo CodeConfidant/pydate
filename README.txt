@@ -43,7 +43,7 @@ get_month(): 	            Return the month attribute value.
 
 get_day(): 	                Return the day attribute value.
 
-get_gregorian:              Return the Gregorian month name.
+get_gregorian():              Return the Gregorian month name.
 
 set_month(month): 	        Change the month attribute value.
 

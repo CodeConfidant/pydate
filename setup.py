@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pydate',
-    version='1.0',
+    version='1.1',
     packages=find_packages(exclude=['tests*']),
     license='MIT',
     description='Package made to format date & time strings for use in various SQL RDBMS',
