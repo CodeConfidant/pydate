@@ -21,6 +21,8 @@ get_year(): 	                Return the year attribute value.
 
 set_year(year): 	            Change the year attribute value.
 
+set_year_UTC():                 Change the year attribute to the current UTC year.
+
 inc_year(): 	                Increment the year attribute value by 1.
 
 dec_year(): 	                Decrement the year attribute value by 1. 
@@ -47,7 +49,11 @@ get_gregorian():              Return the Gregorian month name.
 
 set_month(month): 	        Change the month attribute value.
 
+set_month_UTC():            Change the month attribute to the current UTC month.
+
 set_day(day): 	            Change the day attribute value.
+
+set_day_UTC():              Change the day attribute to the current UTC day.
 
 inc_month(): 	            Increment the month attribute value by 1.
 
@@ -80,9 +86,15 @@ get_second(): 	            Return the second attribute value.
 
 set_hour(hour): 	        Change the hour attribute value.
 
+set_hour_UTC():             Change the hour attribute to the current UTC hour.
+
 set_minute(minute): 	    Change the minute attribute value.
 
+set_minute_UTC():           Change the minute attribute to the current UTC minute.
+
 set_second(second): 	    Change the second attribute value.
+
+set_second_UTC():           Change the second attribute to the current UTC second.
 
 inc_hour(): 	            Increment the hour attribute value by 1.
 
@@ -103,5 +115,7 @@ Module DateTime
 ---------------
 
 Note: This class inherits the attributes/methods of both the Date & Time classes.
+
+set_UTC():                  Change year, month, day, hour, minute, and second attributes to current UTC values.
 
 tostring(): 	            Return a string representing the DateTime class attribute values. 

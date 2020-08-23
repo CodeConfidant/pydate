@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import datetime
+
 class Year:
 
     # Constructor
@@ -25,6 +27,10 @@ class Year:
             raise ValueError("The year argument must have 4 digits!")
 
         self.year = year
+
+    # Change the year attribute to the current UTC year.
+    def set_year_UTC(self):
+        self.year = datetime.datetime.utcnow().year;
 
     # Increment the year attribute value by 1.
     def inc_year(self):
@@ -110,6 +116,10 @@ class Date(Year):
 
         self.month = month
 
+    # Change the month attribute to the current UTC month.
+    def set_month_UTC(self):
+        self.month = datetime.datetime.utcnow().month;
+
     # Change the day attribute value.
     def set_day(self, day):
         if (type(day) is not int):
@@ -119,6 +129,10 @@ class Date(Year):
             raise ValueError("The day argument must be between 1 and 31!")
 
         self.day = day
+
+    # Change the day attribute to the current UTC day.
+    def set_day_UTC(self):
+        self.day = datetime.datetime.utcnow().day
 
     # Increment the month attribute value by 1.
     def inc_month(self):
@@ -200,6 +214,10 @@ class Time:
 
         self.hour = hour
 
+    # Change the hour attribute to the current UTC hour.
+    def set_hour_UTC(self):
+        self.hour = datetime.datetime.utcnow().hour
+
     # Change the minute attribute value.
     def set_minute(self, minute):
         if (type(minute) is not int):
@@ -209,6 +227,10 @@ class Time:
             raise ValueError("The minute argument must be between 0 and 59!")
 
         self.minute = minute
+    
+    # Change the minute attribute to the current UTC minute.
+    def set_minute_UTC(self):
+        self.minute = datetime.datetime.utcnow().minute
 
     # Change the second attribute value.
     def set_second(self, second):
@@ -219,6 +241,10 @@ class Time:
             raise ValueError("The second argument must be between 0 and 59!")
 
         self.second = second
+
+    # Change the second attribute to the current UTC second.
+    def set_second_UTC(self):
+        self.second = datetime.datetime.utcnow().second
 
     # Increment the hour attribute by 1.
     def inc_hour(self):
@@ -272,6 +298,16 @@ class DateTime(Date, Time):
     def __init__(self, year, month, day, hour, minute, second):
         Date.__init__(self, year, month, day)
         Time.__init__(self, hour, minute, second)
+
+    # Change year, month, day, hour, minute, and second attributes to current UTC values.
+    def set_UTC(self):
+        current_UTC = datetime.datetime.utcnow()
+        self.year = current_UTC.year
+        self.month = current_UTC.month
+        self.day = current_UTC.day
+        self.hour = current_UTC.hour
+        self.minute = current_UTC.minute
+        self.second = current_UTC.second
 
     # Return a string representing the DateTime class attribute values.
     def tostring(self):

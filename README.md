@@ -48,6 +48,14 @@
 	</tr>
     <tr>
 		<td>
+            <code>set_year_UTC()</code>
+        </td>
+		<td>
+            Change the year attribute to the current UTC year.
+        </td>
+	</tr>
+    <tr>
+		<td>
             <code>inc_year()</code>
         </td>
 		<td>
@@ -139,10 +147,26 @@
 	</tr>
     <tr>
 		<td>
+            <code>set_month_UTC()</code>
+        </td>
+		<td>
+            Change the month attribute to the current UTC month.
+        </td>
+	</tr>
+    <tr>
+		<td>
             <code>set_day(day)</code>
         </td>
 		<td>
             Change the day attribute value.
+        </td>
+	</tr>
+    <tr>
+		<td>
+            <code>set_day_UTC()</code>
+        </td>
+		<td>
+            Change the day attribute to the current UTC day.
         </td>
 	</tr>
     <tr>
@@ -261,6 +285,14 @@
 	</tr>
     <tr>
 		<td>
+            <code>set_hour_UTC()</code>
+        </td>
+		<td>
+            Change the hour attribute to the current UTC hour.
+        </td>
+	</tr>
+    <tr>
+		<td>
             <code>set_minute(minute)</code>
         </td>
 		<td>
@@ -269,10 +301,26 @@
 	</tr>
     <tr>
 		<td>
+            <code>set_minute_UTC()</code>
+        </td>
+		<td>
+            Change the minute attribute to the current UTC minute.
+        </td>
+	</tr>
+    <tr>
+		<td>
             <code>set_second(second)</code>
         </td>
 		<td>
             Change the second attribute value.
+        </td>
+	</tr>
+    <tr>
+		<td>
+            <code>set_second_UTC()</code>
+        </td>
+		<td>
+            Change the second attribute to the current UTC second.
         </td>
 	</tr>
     <tr>
@@ -347,6 +395,14 @@
 		<th align="left">
             Description
         </th>
+	</tr>
+    <tr>
+		<td>
+            <code>set_UTC()</code>
+        </td>
+		<td>
+            Change year, month, day, hour, minute, and second attributes to current UTC values.
+        </td>
 	</tr>
 	<tr>
 		<td>
