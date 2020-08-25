@@ -32,20 +32,6 @@ class Year:
     def set_year_UTC(self):
         self.year = datetime.datetime.utcnow().year;
 
-    # Increment the year attribute value by 1.
-    def inc_year(self):
-        if (self.year == 9999):
-            raise ArithmeticError("The year attribute is out of bounds!")
-        else:
-            self.year += 1
-
-    # Decrement the year attribute value by 1.
-    def dec_year(self):
-        if (self.year == 0):
-            raise ArithmeticError("The year attribute is out of bounds!")
-        else:
-            self.year -= 1
-
     # Return a string representing the Year class attribute values.
     def tostring(self):
         return str(self.year)
@@ -134,34 +120,6 @@ class Date(Year):
     def set_day_UTC(self):
         self.day = datetime.datetime.utcnow().day
 
-    # Increment the month attribute value by 1.
-    def inc_month(self):
-        if (self.month == 12):
-            raise ArithmeticError("The month attribute is out of bounds!")
-        else:
-            self.month += 1
-
-    # Increment the day attribute value by 1.
-    def inc_day(self):
-        if (self.day == 31):
-            raise ArithmeticError("The day attribute is out of bounds!")
-        else:
-            self.day += 1
-
-    # Decrement the month attribute value by 1.
-    def dec_month(self):
-        if (self.month == 1):
-            raise ArithmeticError("The month attribute is out of bounds!")
-        else:
-            self.month -= 1
-
-    # Decrement the day attribute value by 1.
-    def dec_day(self):
-        if (self.day == 1):
-            raise ArithmeticError("The day attribute is out of bounds!")
-        else:
-            self.day -= 1
-
     # Return a string representing the Date class attribute values. 
     def tostring(self):
         return str("{0}-{1}-{2}").format(self.year, self.month, self.day)
@@ -245,48 +203,6 @@ class Time:
     # Change the second attribute to the current UTC second.
     def set_second_UTC(self):
         self.second = datetime.datetime.utcnow().second
-
-    # Increment the hour attribute by 1.
-    def inc_hour(self):
-        if (self.hour == 23):
-            raise ArithmeticError("The hour attribute is out of bounds!")
-        else:
-            self.hour += 1
-
-    # Increment the minute attribute by 1.
-    def inc_minute(self):
-        if (self.minute == 59):
-            raise ArithmeticError("The minute attribute is out of bounds!")
-        else:
-            self.minute += 1
-
-    # Increment the second attribute by 1.
-    def inc_second(self):
-        if (self.second == 59):
-            raise ArithmeticError("The second attribute is out of bounds!")
-        else:
-            self.second += 1
-
-    # Decrement the hour attribute by 1.
-    def dec_hour(self):
-        if (self.hour == 0):
-            raise ArithmeticError("The hour attribute is out of bounds!")
-        else:
-            self.hour -= 1
-
-    # Decrement the minute attribute by 1.
-    def dec_minute(self):
-        if (self.minute == 0):
-            raise ArithmeticError("The minute attribute is out of bounds!")
-        else:
-            self.minute -= 1
-
-    # Decrement the second attribute by 1.
-    def dec_second(self):
-        if (self.second == 0):
-            raise ArithmeticError("The second attribute is out of bounds!")
-        else:
-            self.second -= 1
 
     # Return a string representing the Time class attribute values. 
     def tostring(self):

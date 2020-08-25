@@ -23,10 +23,6 @@ set_year(year): 	            Change the year attribute value.
 
 set_year_UTC():                 Change the year attribute to the current UTC year.
 
-inc_year(): 	                Increment the year attribute value by 1.
-
-dec_year(): 	                Decrement the year attribute value by 1. 
-
 tostring(): 	                Return a string representing the Year class attribute values. 
 
 -----------
@@ -53,15 +49,7 @@ set_month_UTC():            Change the month attribute to the current UTC month.
 
 set_day(day): 	            Change the day attribute value.
 
-set_day_UTC():              Change the day attribute to the current UTC day.
-
-inc_month(): 	            Increment the month attribute value by 1.
-
-inc_day(): 	                Increment the day attribute value by 1.
-
-dec_month(): 	            Decrement the month attribute value by 1.
-
-dec_day(): 	                Decrement the day attribute value by 1. 
+set_day_UTC():              Change the day attribute to the current UTC day. 
 
 tostring(): 	            Return a string representing the Date class attribute values.
 
@@ -94,19 +82,7 @@ set_minute_UTC():           Change the minute attribute to the current UTC minut
 
 set_second(second): 	    Change the second attribute value.
 
-set_second_UTC():           Change the second attribute to the current UTC second.
-
-inc_hour(): 	            Increment the hour attribute value by 1.
-
-inc_minute(): 	            Increment the minute attribute value by 1.
-
-inc_second(): 	            Increment the second attribute value by 1.
-
-dec_hour(): 	            Decrement the hour attribute value by 1.
-
-dec_minute(): 	            Decrement the minute attribute value by 1.
-
-dec_second(): 	            Decrement the second attribute value by 1. 
+set_second_UTC():           Change the second attribute to the current UTC second. 
 
 tostring(): 	            Return a string representing the Time class attribute values.
 
