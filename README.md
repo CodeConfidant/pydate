@@ -321,7 +321,7 @@
             <code>set_EST()</code>
         </td>
 		<td>
-            Change year, month, day, hour, minute, and second attributes to current ETC values (UTC-05:00).
+            Change year, month, day, hour, minute, and second attributes to current EST values (UTC-05:00).
         </td>
 	</tr>
 	<tr>

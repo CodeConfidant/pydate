@@ -97,6 +97,6 @@ TotalDays:                  Attribute of the dictionary type denoting the total 
 
 set_UTC():                  Change year, month, day, hour, minute, and second attributes to current UTC values.
 
-set_EST():                  Change year, month, day, hour, minute, and second attributes to current ETC values (UTC-05:00).
+set_EST():                  Change year, month, day, hour, minute, and second attributes to current EST values (UTC-05:00).
 
 tostring(): 	            Return a string representing the DateTime class attribute values. 
