@@ -9,8 +9,8 @@ class Year:
         if (type(year) is not int):
             raise TypeError("The year argument isn't an int!")
 
-        if (len(str(year)) > 4 or len(str(year)) < 4):
-            raise ValueError("The year argument must have 4 digits!")
+        if (len(str(year)) < 4):
+            raise ValueError("The year argument must have 4 or more digits!")
 
         self.year = year
 
@@ -23,14 +23,14 @@ class Year:
         if (type(year) is not int):
             raise TypeError("The year argument isn't an int!")
 
-        if (len(str(year)) > 4 or len(str(year)) < 4):
-            raise ValueError("The year argument must have 4 digits!")
+        if (len(str(year)) < 4):
+            raise ValueError("The year argument must have 4 or more digits!")
 
         self.year = year
 
     # Change the year attribute to the current UTC year.
     def set_year_UTC(self):
-        self.year = datetime.utcnow().year;
+        self.year = datetime.utcnow().year
 
     # Return a string representing the Year class attribute values.
     def tostring(self):
@@ -104,7 +104,7 @@ class Date(Year):
 
     # Change the month attribute to the current UTC month.
     def set_month_UTC(self):
-        self.month = datetime.utcnow().month;
+        self.month = datetime.utcnow().month
 
     # Change the day attribute value.
     def set_day(self, day):
@@ -206,7 +206,20 @@ class Time:
 
     # Return a string representing the Time class attribute values. 
     def tostring(self):
-        return str("{0}:{1}:{2}").format(self.hour, self.minute, self.second)
+        hour = str(self.hour)
+        minute = str(self.minute)
+        second = str(self.second)
+
+        if (self.hour <= 9):
+            hour = str(0) + hour
+
+        if (self.minute <= 9):
+            minute = str(0) + minute
+
+        if (self.second <= 9):
+            second = str(0) + second
+
+        return str("{0}:{1}:{2}").format(hour, minute, second)
 
 class DateTime(Date, Time):
 
@@ -245,6 +258,7 @@ class DateTime(Date, Time):
         if (DateTime.get_hour(self) < 5):
             if (DateTime.get_day(self) == 1):
                 if (DateTime.get_month(self) == 1):
+                    DateTime.set_year(self, DateTime.get_year(self) - 1)
                     DateTime.set_month(self, 12)
                     DateTime.set_day(self, self.TotalDays["December"])
                 elif (DateTime.get_month(self) == 2):
@@ -303,4 +317,17 @@ class DateTime(Date, Time):
 
     # Return a string representing the DateTime class attribute values.
     def tostring(self):
-        return str("{0}-{1}-{2} {3}:{4}:{5}").format(self.year, self.month, self.day, self.hour, self.minute, self.second)
+        hour = str(self.hour)
+        minute = str(self.minute)
+        second = str(self.second)
+
+        if (self.hour <= 9):
+            hour = str(0) + hour
+
+        if (self.minute <= 9):
+            minute = str(0) + minute
+
+        if (self.second <= 9):
+            second = str(0) + second
+
+        return str("{0}-{1}-{2} {3}:{4}:{5}").format(self.year, self.month, self.day, hour, minute, second)
