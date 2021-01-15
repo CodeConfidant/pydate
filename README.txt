@@ -92,6 +92,11 @@ Module DateTime
 
 Note: This class inherits the attributes/methods of both the Date & Time classes.
 
+TotalDays:                  Attribute of the dictionary type denoting the total days in each month.
+                            Uses each gregorian month name as a key.
+
 set_UTC():                  Change year, month, day, hour, minute, and second attributes to current UTC values.
+
+set_EST():                  Change year, month, day, hour, minute, and second attributes to current ETC values (UTC-05:00).
 
 tostring(): 	            Return a string representing the DateTime class attribute values. 

@@ -294,7 +294,7 @@
 <table width="100%">
 	<tr>
 		<th align="left">
-            Method
+            Attribute/Method
         </th>
 		<th align="left">
             Description
@@ -302,10 +302,26 @@
 	</tr>
     <tr>
 		<td>
+            <code>TotalDays</code>
+        </td>
+		<td>
+            Attribute of the dictionary type denoting the total days in each month. <br/> Uses each gregorian month name as a key.
+        </td>
+	</tr>
+    <tr>
+		<td>
             <code>set_UTC()</code>
         </td>
 		<td>
             Change year, month, day, hour, minute, and second attributes to current UTC values.
+        </td>
+	</tr>
+    <tr>
+		<td>
+            <code>set_EST()</code>
+        </td>
+		<td>
+            Change year, month, day, hour, minute, and second attributes to current ETC values (UTC-05:00).
         </td>
 	</tr>
 	<tr>

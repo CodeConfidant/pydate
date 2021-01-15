@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import datetime
+from datetime import datetime
 
 class Year:
 
@@ -30,7 +30,7 @@ class Year:
 
     # Change the year attribute to the current UTC year.
     def set_year_UTC(self):
-        self.year = datetime.datetime.utcnow().year;
+        self.year = datetime.utcnow().year;
 
     # Return a string representing the Year class attribute values.
     def tostring(self):
@@ -104,7 +104,7 @@ class Date(Year):
 
     # Change the month attribute to the current UTC month.
     def set_month_UTC(self):
-        self.month = datetime.datetime.utcnow().month;
+        self.month = datetime.utcnow().month;
 
     # Change the day attribute value.
     def set_day(self, day):
@@ -118,7 +118,7 @@ class Date(Year):
 
     # Change the day attribute to the current UTC day.
     def set_day_UTC(self):
-        self.day = datetime.datetime.utcnow().day
+        self.day = datetime.utcnow().day
 
     # Return a string representing the Date class attribute values. 
     def tostring(self):
@@ -174,7 +174,7 @@ class Time:
 
     # Change the hour attribute to the current UTC hour.
     def set_hour_UTC(self):
-        self.hour = datetime.datetime.utcnow().hour
+        self.hour = datetime.utcnow().hour
 
     # Change the minute attribute value.
     def set_minute(self, minute):
@@ -188,7 +188,7 @@ class Time:
     
     # Change the minute attribute to the current UTC minute.
     def set_minute_UTC(self):
-        self.minute = datetime.datetime.utcnow().minute
+        self.minute = datetime.utcnow().minute
 
     # Change the second attribute value.
     def set_second(self, second):
@@ -202,7 +202,7 @@ class Time:
 
     # Change the second attribute to the current UTC second.
     def set_second_UTC(self):
-        self.second = datetime.datetime.utcnow().second
+        self.second = datetime.utcnow().second
 
     # Return a string representing the Time class attribute values. 
     def tostring(self):
@@ -214,16 +214,92 @@ class DateTime(Date, Time):
     def __init__(self, year, month, day, hour, minute, second):
         Date.__init__(self, year, month, day)
         Time.__init__(self, hour, minute, second)
+        self.TotalDays = dict({
+            "January": 31,
+            "February": 28,
+            "March": 31,
+            "April": 30,
+            "May": 31,
+            "June": 30,
+            "July": 31, 
+            "August": 31,
+            "September": 30,
+            "October": 31,
+            "November": 30,
+            "December": 31
+        })
 
     # Change year, month, day, hour, minute, and second attributes to current UTC values.
     def set_UTC(self):
-        current_UTC = datetime.datetime.utcnow()
-        self.year = current_UTC.year
-        self.month = current_UTC.month
-        self.day = current_UTC.day
-        self.hour = current_UTC.hour
-        self.minute = current_UTC.minute
-        self.second = current_UTC.second
+        DateTime.set_year_UTC(self)
+        DateTime.set_month_UTC(self)
+        DateTime.set_day_UTC(self)
+        DateTime.set_hour_UTC(self)
+        DateTime.set_minute_UTC(self)
+        DateTime.set_second_UTC(self)
+
+    # Change year, month, day, hour, minute, and second attributes to current EST values (UTC-05:00).
+    def set_EST(self):
+        DateTime.set_UTC(self)
+
+        if (DateTime.get_hour(self) < 5):
+            if (DateTime.get_day(self) == 1):
+                if (DateTime.get_month(self) == 1):
+                    DateTime.set_month(self, 12)
+                    DateTime.set_day(self, self.TotalDays["December"])
+                elif (DateTime.get_month(self) == 2):
+                    DateTime.set_month(self, 1)
+                    DateTime.set_day(self, self.TotalDays["January"])
+                elif (DateTime.get_month(self) == 3):
+                    DateTime.set_month(self, 2)
+                    DateTime.set_day(self, self.TotalDays["February"])
+                elif (DateTime.get_month(self) == 4):
+                    DateTime.set_month(self, 3)
+                    DateTime.set_day(self, self.TotalDays["March"])
+                elif (DateTime.get_month(self) == 5):
+                    DateTime.set_month(self, 4)
+                    DateTime.set_day(self, self.TotalDays["April"])
+                elif (DateTime.get_month(self) == 6):
+                    DateTime.set_month(self, 5)
+                    DateTime.set_day(self, self.TotalDays["May"])
+                elif (DateTime.get_month(self) == 7):
+                    DateTime.set_month(self, 6)
+                    DateTime.set_day(self, self.TotalDays["June"])
+                elif (DateTime.get_month(self) == 8):
+                    DateTime.set_month(self, 7)
+                    DateTime.set_day(self, self.TotalDays["July"])
+                elif (DateTime.get_month(self) == 9):
+                    DateTime.set_month(self, 8)
+                    DateTime.set_day(self, self.TotalDays["August"])
+                elif (DateTime.get_month(self) == 10):
+                    DateTime.set_month(self, 9)
+                    DateTime.set_day(self, self.TotalDays["September"])
+                elif (DateTime.get_month(self) == 11):
+                    DateTime.set_month(self, 10)
+                    DateTime.set_day(self, self.TotalDays["October"])
+                elif (DateTime.get_month(self) == 12):
+                    DateTime.set_month(self, 11)
+                    DateTime.set_day(self, self.TotalDays["November"])
+                else:
+                    pass
+            else:
+                DateTime.set_day(self, DateTime.get_day(self) - 1)
+
+        if (DateTime.get_hour(self) == 0):
+            DateTime.set_hour(self, 19)
+        elif (DateTime.get_hour(self) == 1):
+            DateTime.set_hour(self, 20)
+        elif (DateTime.get_hour(self) == 2):
+            DateTime.set_hour(self, 21)
+        elif (DateTime.get_hour(self) == 3):
+            DateTime.set_hour(self, 22)
+        elif (DateTime.get_hour(self) == 4):
+            DateTime.set_hour(self, 23)
+        elif (DateTime.get_hour(self) == 5):
+            DateTime.set_hour(self, 0)
+        else:
+            DateTime.set_hour(self, DateTime.get_hour(self) - 5)
+
 
     # Return a string representing the DateTime class attribute values.
     def tostring(self):
