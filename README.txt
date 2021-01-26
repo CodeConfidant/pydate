@@ -41,7 +41,10 @@ get_month(): 	            Return the month attribute value.
 
 get_day(): 	                Return the day attribute value.
 
-get_gregorian():              Return the Gregorian month name.
+get_gregorian():            Return the Gregorian month name.
+
+get_total_days():           Return a dictionary denoting the total days in each month. 
+                            Uses each gregorian month name as a key.
 
 set_month(month): 	        Change the month attribute value.
 
@@ -91,9 +94,6 @@ Module DateTime
 ---------------
 
 Note: This class inherits the attributes/methods of both the Date & Time classes.
-
-TotalDays:                  Attribute of the dictionary type denoting the total days in each month.
-                            Uses each gregorian month name as a key.
 
 set_UTC():                  Change year, month, day, hour, minute, and second attributes to current UTC values.
 

@@ -123,6 +123,14 @@
 	</tr>
     <tr>
 		<td>
+            <code>get_total_days()</code>
+        </td>
+		<td>
+            Return a dictionary denoting the total days in each month. <br/> Uses each gregorian month name as a key.
+        </td>
+	</tr>
+    <tr>
+		<td>
             <code>set_month(month)</code>
         </td>
 		<td>
@@ -299,14 +307,6 @@
 		<th align="left">
             Description
         </th>
-	</tr>
-    <tr>
-		<td>
-            <code>TotalDays</code>
-        </td>
-		<td>
-            Attribute of the dictionary type denoting the total days in each month. <br/> Uses each gregorian month name as a key.
-        </td>
 	</tr>
     <tr>
 		<td>
