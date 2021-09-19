@@ -18,7 +18,7 @@ setup(
     python_requires='>=3.6'
 )
 
-# - Update README.md and README.txt
+# - Update README.md
 # - Update Version Number
 # - Tar Wrap the Package: python setup.py sdist
 # - Check Package: twine check dist/*
