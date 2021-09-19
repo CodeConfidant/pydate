@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-# Setup python package - python setup.py sdist
 
 from setuptools import setup, find_packages
 
 setup(
     name='pydate',
-    version='1.1.6',
+    version='1.1.7',
     packages=find_packages(),
     license='MIT',
     description='Package made to format date & time strings for use in various SQL RDBMS',
@@ -16,3 +15,10 @@ setup(
     author_email='codeconfidant@gmail.com',
     platforms=['Windows', 'Linux']
 )
+
+# - Update README.md and README.txt
+# - Update Version Number
+# - Tar Wrap the Package: python setup.py sdist
+# - Upload to PYPI: twine upload dist/*
+# - Commit Changes
+# - Change Release Version in Github Repo
