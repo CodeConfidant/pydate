@@ -146,7 +146,7 @@ class Date(Year):
 
     # Return a string representing the Date class attribute values. 
     def tostring(self):
-        return str("{0}-{1}-{2}").format(self.year, self.month, self.day)
+        return str(f"{self.year}-{self.month}-{self.day}")
 
 class Time:
 
@@ -247,7 +247,7 @@ class Time:
             if (self.second <= 9):
                 second = str(0) + second
 
-        return str("{0}:{1}:{2}").format(hour, minute, second)
+        return str(f"{hour}:{minute}:{second}")
 
 class DateTime(Date, Time):
 
@@ -344,4 +344,4 @@ class DateTime(Date, Time):
             if (self.second <= 9):
                 second = str(0) + second
 
-        return str("{0}-{1}-{2} {3}:{4}:{5}").format(self.year, self.month, self.day, hour, minute, second)
+        return str(f"{self.year}-{self.month}-{self.day} {hour}:{minute}:{second}")
