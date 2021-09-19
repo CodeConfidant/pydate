@@ -5,12 +5,13 @@ from datetime import datetime
 class Year:
 
     # Constructor
-    def __init__(self, year):
-        if (type(year) is not int):
-            raise TypeError("The year argument isn't an int!")
+    def __init__(self, year = None):
+        if (year is not None): 
+            if (type(year) is not int):
+                raise TypeError("The year argument isn't an int!")
 
-        if (len(str(year)) < 4):
-            raise ValueError("The year argument must have 4 or more digits!")
+            if (len(str(year)) < 4):
+                raise ValueError("The year argument must have 4 or more digits!")
 
         self.year = year
 
@@ -39,20 +40,22 @@ class Year:
 class Date(Year):
 
     # Constructor
-    def __init__(self, year, month, day):
+    def __init__(self, year = None, month = None, day = None):
         super().__init__(year)
 
-        if (type(month) is not int):
-            raise TypeError("The month argument isn't an int!")
+        if (month is not None): 
+            if (type(month) is not int):
+                raise TypeError("The month argument isn't an int!")
 
-        if (type(day) is not int):
-            raise TypeError("The day argument isn't an int!")
+            if (month < 1 or month > 12):
+                raise ValueError("The month argument must be between 1 and 12!")
 
-        if (month < 1 or month > 12):
-            raise ValueError("The month argument must be between 1 and 12!")
+        if (day is not None): 
+            if (type(day) is not int):
+                raise TypeError("The day argument isn't an int!")
 
-        if (day < 1 or day > 31):
-             raise ValueError("The day argument must be between 1 and 31!")
+            if (day < 1 or day > 31):
+                raise ValueError("The day argument must be between 1 and 31!")
 
         self.month = month
         self.day = day
@@ -91,6 +94,8 @@ class Date(Year):
             return "November"
         elif (self.month == 12):
             return "December"
+        else:
+            return None
 
     # Return a dictionary denoting the total days in each month. Uses each gregorian month name as a key.
     def get_total_days(self):
@@ -141,29 +146,32 @@ class Date(Year):
 
     # Return a string representing the Date class attribute values. 
     def tostring(self):
-        return str("{0}-{1}-{2}").format(self.year, self.month, self.day)
+        return str(f"{self.year}-{self.month}-{self.day}")
 
 class Time:
 
     # Constructor
-    def __init__(self, hour, minute, second):
-        if (type(hour) is not int):
-            raise TypeError("The hour argument isn't an int!")
+    def __init__(self, hour = None, minute = None, second = None):
+        if (hour is not None):
+            if (type(hour) is not int):
+                raise TypeError("The hour argument isn't an int!")
 
-        if (type(minute) is not int):
-            raise TypeError("The minute argument isn't an int!")
+            if (hour < 0 or hour > 23):
+                raise ValueError("The hour argument must be between 0 and 23!")
 
-        if (type(second) is not int):
-            raise TypeError("The second argument isn't an int!")
+        if (minute is not None):
+            if (type(minute) is not int):
+                raise TypeError("The minute argument isn't an int!")
 
-        if (hour < 0 or hour > 23):
-            raise ValueError("The hour argument must be between 0 and 23!")
+            if (minute < 0 or minute > 59):
+                raise ValueError("The minute argument must be between 0 and 59!")
 
-        if (minute < 0 or minute > 59):
-            raise ValueError("The minute argument must be between 0 and 59!")
+        if (minute is not None):
+            if (type(second) is not int):
+                raise TypeError("The second argument isn't an int!")
 
-        if (second < 0 or second > 59):
-            raise ValueError("The second argument must be between 0 and 59!")
+            if (second < 0 or second > 59):
+                raise ValueError("The second argument must be between 0 and 59!")
 
         self.hour = hour
         self.minute = minute
@@ -229,21 +237,22 @@ class Time:
         minute = str(self.minute)
         second = str(self.second)
 
-        if (self.hour <= 9):
-            hour = str(0) + hour
+        if (self.hour is not None and self.minute is not None and self.second is not None): 
+            if (self.hour <= 9):
+                hour = str(0) + hour
 
-        if (self.minute <= 9):
-            minute = str(0) + minute
+            if (self.minute <= 9):
+                minute = str(0) + minute
 
-        if (self.second <= 9):
-            second = str(0) + second
+            if (self.second <= 9):
+                second = str(0) + second
 
-        return str("{0}:{1}:{2}").format(hour, minute, second)
+        return str(f"{hour}:{minute}:{second}")
 
 class DateTime(Date, Time):
 
     # Constructor
-    def __init__(self, year, month, day, hour, minute, second):
+    def __init__(self, year = None, month = None, day = None, hour = None, minute = None, second = None):
         Date.__init__(self, year, month, day)
         Time.__init__(self, hour, minute, second)
 
@@ -319,20 +328,20 @@ class DateTime(Date, Time):
         else:
             DateTime.set_hour(self, DateTime.get_hour(self) - 5)
 
-
     # Return a string representing the DateTime class attribute values.
     def tostring(self):
         hour = str(self.hour)
         minute = str(self.minute)
         second = str(self.second)
 
-        if (self.hour <= 9):
-            hour = str(0) + hour
+        if (self.hour is not None and self.minute is not None and self.second is not None):
+            if (self.hour <= 9):
+                hour = str(0) + hour
 
-        if (self.minute <= 9):
-            minute = str(0) + minute
+            if (self.minute <= 9):
+                minute = str(0) + minute
 
-        if (self.second <= 9):
-            second = str(0) + second
+            if (self.second <= 9):
+                second = str(0) + second
 
-        return str("{0}-{1}-{2} {3}:{4}:{5}").format(self.year, self.month, self.day, hour, minute, second)
+        return str(f"{self.year}-{self.month}-{self.day} {hour}:{minute}:{second}")

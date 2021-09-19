@@ -1,14 +1,16 @@
 # ***pydate***
 
-    A Python package made to format date & time strings for use in various SQL RDBMS.
+    Python package made to set, parse, & format DateTime objects.
 
-    Make sure to have the latest version of Python 3 installed although this should work with previous versions.  
+    Python version 3.6 is required at a minimum.  
 
     To install the package with pip enter command in terminal:
         pip install pydate
 
     To uninstall the package with pip enter command in terminal:
         pip uninstall pydate
+
+    Note: All object params are optional. Their values are set None without constructor. 
 
 ## ***Module Year***
 
