@@ -17,7 +17,7 @@ class Year:
 
     # Return the year attribute value. 
     def get_year(self):
-        return self.year()
+        return self.year
 
     # Change the year attribute value.
     def set_year(self, year):
@@ -268,65 +268,72 @@ class DateTime(Date, Time):
     # Change year, month, day, hour, minute, and second attributes to current EST values (UTC-05:00).
     def set_EST(self):
         DateTime.set_UTC(self)
+        differential = int(5)
+        DateTime.__decrement_differential(self, differential)
 
-        if (DateTime.get_hour(self) < 5):
+        new_hour = DateTime.get_hour(self) - differential
+        if (new_hour < 0):
+            new_hour += 23
+        
+        DateTime.set_hour(self, new_hour)
+
+    # Change year, month, day, hour, minute, and second attributes to current EDT values (UTC-04:00).
+    def set_EDT(self):
+        DateTime.set_UTC(self)
+        differential = int(4)
+        DateTime.__decrement_differential(self, differential)
+
+        new_hour = DateTime.get_hour(self) - differential
+        if (new_hour < 0):
+            new_hour += 23
+        
+        DateTime.set_hour(self, new_hour)
+
+    # Private helper method used to set day, month, and year values within decrementing UTC timezone methods such as set_EST(), set_EDT(), ect.
+    def __decrement_differential(self, differential):
+        if (DateTime.get_hour(self) < differential):
             if (DateTime.get_day(self) == 1):
                 if (DateTime.get_month(self) == 1):
                     DateTime.set_year(self, DateTime.get_year(self) - 1)
                     DateTime.set_month(self, 12)
-                    DateTime.set_day(self, DateTime.get_total_days()["December"])
+                    DateTime.set_day(self, DateTime.get_total_days(self)["December"])
                 elif (DateTime.get_month(self) == 2):
                     DateTime.set_month(self, 1)
-                    DateTime.set_day(self, DateTime.get_total_days()["January"])
+                    DateTime.set_day(self, DateTime.get_total_days(self)["January"])
                 elif (DateTime.get_month(self) == 3):
                     DateTime.set_month(self, 2)
-                    DateTime.set_day(self, DateTime.get_total_days()["February"])
+                    DateTime.set_day(self, DateTime.get_total_days(self)["February"])
                 elif (DateTime.get_month(self) == 4):
                     DateTime.set_month(self, 3)
-                    DateTime.set_day(self, DateTime.get_total_days()["March"])
+                    DateTime.set_day(self, DateTime.get_total_days(self)["March"])
                 elif (DateTime.get_month(self) == 5):
                     DateTime.set_month(self, 4)
-                    DateTime.set_day(self, DateTime.get_total_days()["April"])
+                    DateTime.set_day(self, DateTime.get_total_days(self)["April"])
                 elif (DateTime.get_month(self) == 6):
                     DateTime.set_month(self, 5)
-                    DateTime.set_day(self, DateTime.get_total_days()["May"])
+                    DateTime.set_day(self, DateTime.get_total_days(self)["May"])
                 elif (DateTime.get_month(self) == 7):
                     DateTime.set_month(self, 6)
-                    DateTime.set_day(self, DateTime.get_total_days()["June"])
+                    DateTime.set_day(self, DateTime.get_total_days(self)["June"])
                 elif (DateTime.get_month(self) == 8):
                     DateTime.set_month(self, 7)
-                    DateTime.set_day(self, DateTime.get_total_days()["July"])
+                    DateTime.set_day(self, DateTime.get_total_days(self)["July"])
                 elif (DateTime.get_month(self) == 9):
                     DateTime.set_month(self, 8)
-                    DateTime.set_day(self, DateTime.get_total_days()["August"])
+                    DateTime.set_day(self, DateTime.get_total_days(self)["August"])
                 elif (DateTime.get_month(self) == 10):
                     DateTime.set_month(self, 9)
-                    DateTime.set_day(self, DateTime.get_total_days()["September"])
+                    DateTime.set_day(self, DateTime.get_total_days(self)["September"])
                 elif (DateTime.get_month(self) == 11):
                     DateTime.set_month(self, 10)
-                    DateTime.set_day(self, DateTime.get_total_days()["October"])
+                    DateTime.set_day(self, DateTime.get_total_days(self)["October"])
                 elif (DateTime.get_month(self) == 12):
                     DateTime.set_month(self, 11)
-                    DateTime.set_day(self, DateTime.get_total_days()["November"])
+                    DateTime.set_day(self, DateTime.get_total_days(self)["November"])
                 else:
                     pass
             else:
                 DateTime.set_day(self, DateTime.get_day(self) - 1)
-
-        if (DateTime.get_hour(self) == 0):
-            DateTime.set_hour(self, 19)
-        elif (DateTime.get_hour(self) == 1):
-            DateTime.set_hour(self, 20)
-        elif (DateTime.get_hour(self) == 2):
-            DateTime.set_hour(self, 21)
-        elif (DateTime.get_hour(self) == 3):
-            DateTime.set_hour(self, 22)
-        elif (DateTime.get_hour(self) == 4):
-            DateTime.set_hour(self, 23)
-        elif (DateTime.get_hour(self) == 5):
-            DateTime.set_hour(self, 0)
-        else:
-            DateTime.set_hour(self, DateTime.get_hour(self) - 5)
 
     # Return a string representing the DateTime class attribute values.
     def tostring(self):

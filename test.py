@@ -29,3 +29,6 @@ print("Demo DateTime: UTC -", demo_datetime.get_gregorian(), demo_datetime.tostr
 
 demo_datetime.set_EST()
 print("Demo DateTime: EST -", demo_datetime.get_gregorian(), demo_datetime.tostring())
+
+demo_datetime.set_EDT()
+print("Demo DateTime: EDT -", demo_datetime.get_gregorian(), demo_datetime.tostring())

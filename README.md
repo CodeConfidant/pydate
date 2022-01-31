@@ -326,6 +326,14 @@
             Change year, month, day, hour, minute, and second attributes to current EST values (UTC-05:00).
         </td>
 	</tr>
+    <tr>
+		<td>
+            <code>set_EDT()</code>
+        </td>
+		<td>
+            Change year, month, day, hour, minute, and second attributes to current EDT values (UTC-04:00).
+        </td>
+	</tr>
 	<tr>
 		<td>
             <code>tostring()</code>
