@@ -265,31 +265,79 @@ class DateTime(Date, Time):
         DateTime.set_minute_UTC(self)
         DateTime.set_second_UTC(self)
 
-    # Change year, month, day, hour, minute, and second attributes to current EST values (UTC-05:00).
-    def set_EST(self):
-        DateTime.set_UTC(self)
-        differential = int(5)
-        DateTime.__decrement_differential(self, differential)
-
-        new_hour = DateTime.get_hour(self) - differential
-        if (new_hour < 0):
-            new_hour += 23
+    '''
+        Set second, minute, hour, day, month, and year values within to timezone indicated in the argument.
+            The 'timezone' argument must be a string.
+            Values for the 'timezone' argument can be the following acronyms (Not Case Sensitive):
+                - AST => (Atlantic Standard Time UTC-04:00)
+                - EDT => (Eastern Daylight Time UTC-04:00)
+                - EST => (Eastern Standard Time UTC-05:00)
+                - CDT => (Central Daylight Time UTC-05:00)
+                - CST => (Central Standard Time UTC-06:00)
+                - MDT => (Mountain Daylight Time UTC-06:00)
+                - MST => (Mountain Standard Time UTC-07:00)
+                - PDT => (Pacific Daylight Time UTC-07:00)
+                - PST => (Pacific Standard Time UTC-08:00)
+                - AKDT => (Alaska Daylight Time UTC-08:00)
+                - AKST => (Alaska Standard Time UTC-09:00)
+                - HDT => (Hawaii-Aleutian Daylight Time UTC-09:00) 
+                - HST => (Hawaii-Aleutian Standard Time UTC-10:00)
+                - SST => (Samoa Standard Time UTC-11:00)
+    '''
+    def set_timezone(self, timezone):
+        if (type(timezone) is not str):
+            raise TypeError('The timezone argument must be a string.')
         
-        DateTime.set_hour(self, new_hour)
-
-    # Change year, month, day, hour, minute, and second attributes to current EDT values (UTC-04:00).
-    def set_EDT(self):
+        timezone = str.upper(timezone)
         DateTime.set_UTC(self)
-        differential = int(4)
-        DateTime.__decrement_differential(self, differential)
 
-        new_hour = DateTime.get_hour(self) - differential
-        if (new_hour < 0):
-            new_hour += 23
-        
-        DateTime.set_hour(self, new_hour)
+        match timezone:
+            case 'AST':
+                differential = 4
+                DateTime.__decrement_differential(self, differential)
+            case 'EDT':
+                differential = 4
+                DateTime.__decrement_differential(self, differential)
+            case 'EST':
+                differential = 5
+                DateTime.__decrement_differential(self, differential)
+            case 'CDT':
+                differential = 5
+                DateTime.__decrement_differential(self, differential)
+            case 'CST':
+                differential = 6
+                DateTime.__decrement_differential(self, differential)
+            case 'MDT':
+                differential = 6
+                DateTime.__decrement_differential(self, differential)
+            case 'MST':
+                differential = 7
+                DateTime.__decrement_differential(self, differential)
+            case 'PDT':
+                differential = 7
+                DateTime.__decrement_differential(self, differential)
+            case 'PST':
+                differential = 8
+                DateTime.__decrement_differential(self, differential)
+            case 'AKDT':
+                differential = 8
+                DateTime.__decrement_differential(self, differential)
+            case 'AKST':
+                differential = 9
+                DateTime.__decrement_differential(self, differential)
+            case 'HDT':
+                differential = 9
+                DateTime.__decrement_differential(self, differential)
+            case 'HST':
+                differential = 10
+                DateTime.__decrement_differential(self, differential)
+            case 'SST':
+                differential = 11
+                DateTime.__decrement_differential(self, differential)
+            case _:
+                raise ValueError('The timezone argument must be one of the supported acronyms.')
 
-    # Private helper method used to set day, month, and year values within decrementing UTC timezone methods such as set_EST(), set_EDT(), ect.
+    # Private helper method used to set hour, day, month, and year values within decrementing UTC timezones.
     def __decrement_differential(self, differential):
         if (DateTime.get_hour(self) < differential):
             if (DateTime.get_day(self) == 1):
@@ -334,6 +382,12 @@ class DateTime(Date, Time):
                     pass
             else:
                 DateTime.set_day(self, DateTime.get_day(self) - 1)
+        
+        new_hour = DateTime.get_hour(self) - differential
+        if (new_hour < 0):
+            new_hour += 23
+        
+        DateTime.set_hour(self, new_hour)
 
     # Return a string representing the DateTime class attribute values.
     def tostring(self):

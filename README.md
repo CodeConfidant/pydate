@@ -320,18 +320,26 @@
 	</tr>
     <tr>
 		<td>
-            <code>set_EST()</code>
+            <code>set_timezone(timezone)</code>
         </td>
 		<td>
-            Change year, month, day, hour, minute, and second attributes to current EST values (UTC-05:00).
-        </td>
-	</tr>
-    <tr>
-		<td>
-            <code>set_EDT()</code>
-        </td>
-		<td>
-            Change year, month, day, hour, minute, and second attributes to current EDT values (UTC-04:00).
+            Set second, minute, hour, day, month, and year values within to timezone indicated in the argument.
+            The 'timezone' argument must be a string.
+            Values for the 'timezone' argument can be the following acronyms (Not Case Sensitive):
+                - AST => (Atlantic Standard Time UTC-04:00)
+                - EDT => (Eastern Daylight Time UTC-04:00)
+                - EST => (Eastern Standard Time UTC-05:00)
+                - CDT => (Central Daylight Time UTC-05:00)
+                - CST => (Central Standard Time UTC-06:00)
+                - MDT => (Mountain Daylight Time UTC-06:00)
+                - MST => (Mountain Standard Time UTC-07:00)
+                - PDT => (Pacific Daylight Time UTC-07:00)
+                - PST => (Pacific Standard Time UTC-08:00)
+                - AKDT => (Alaska Daylight Time UTC-08:00)
+                - AKST => (Alaska Standard Time UTC-09:00)
+                - HDT => (Hawaii-Aleutian Daylight Time UTC-09:00)
+                - HST => (Hawaii-Aleutian Standard Time UTC-10:00)
+                - SST => (Samoa Standard Time UTC-11:00)
         </td>
 	</tr>
 	<tr>
