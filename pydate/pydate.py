@@ -268,28 +268,16 @@ class DateTime(Date, Time):
     # Change year, month, day, hour, minute, and second attributes to current EST values (UTC-05:00).
     def set_EST(self):
         DateTime.set_UTC(self)
-        differential = int(5)
+        differential = 5
         DateTime.__decrement_differential(self, differential)
-
-        new_hour = DateTime.get_hour(self) - differential
-        if (new_hour < 0):
-            new_hour += 23
-        
-        DateTime.set_hour(self, new_hour)
 
     # Change year, month, day, hour, minute, and second attributes to current EDT values (UTC-04:00).
     def set_EDT(self):
         DateTime.set_UTC(self)
-        differential = int(4)
+        differential = 4
         DateTime.__decrement_differential(self, differential)
 
-        new_hour = DateTime.get_hour(self) - differential
-        if (new_hour < 0):
-            new_hour += 23
-        
-        DateTime.set_hour(self, new_hour)
-
-    # Private helper method used to set day, month, and year values within decrementing UTC timezone methods such as set_EST(), set_EDT(), ect.
+    # Private helper method used to set day, hour, month, and year values within decrementing UTC timezone methods such as set_EST(), set_EDT(), ect.
     def __decrement_differential(self, differential):
         if (DateTime.get_hour(self) < differential):
             if (DateTime.get_day(self) == 1):
@@ -334,6 +322,12 @@ class DateTime(Date, Time):
                     pass
             else:
                 DateTime.set_day(self, DateTime.get_day(self) - 1)
+        
+        new_hour = DateTime.get_hour(self) - differential
+        if (new_hour < 0):
+            new_hour += 23
+        
+        DateTime.set_hour(self, new_hour)
 
     # Return a string representing the DateTime class attribute values.
     def tostring(self):
