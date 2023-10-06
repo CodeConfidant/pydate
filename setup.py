@@ -5,7 +5,7 @@ from pathlib import Path
 
 setup(
     name='pydate',
-    version='1.1.8',
+    version='1.1.9',
     packages=find_packages(),
     license='MIT',
     description='Python package made to set, parse, & format DateTime objects.',
@@ -22,6 +22,6 @@ setup(
 # - Update Version Number
 # - Tar Wrap the Package: python setup.py sdist
 # - Check Package: twine check dist/*
-# - Upload to PYPI: twine upload dist/*
+# - Upload to PYPI: twine upload dist/* -u <username> -p <password>
 # - Commit Changes
 # - Change Release Version in Github Repo
