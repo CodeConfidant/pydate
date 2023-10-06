@@ -19,7 +19,7 @@ class Year:
     def get_year(self):
         return self.year
 
-    # Change the year attribute value.
+    # Set the year attribute value.
     def set_year(self, year):
         if (type(year) is not int):
             raise TypeError("The year argument isn't an int!")
@@ -29,7 +29,7 @@ class Year:
 
         self.year = year
 
-    # Change the year attribute to the current UTC year.
+    # Set the year attribute to the current UTC year.
     def set_year_UTC(self):
         self.year = datetime.utcnow().year
 
@@ -116,7 +116,7 @@ class Date(Year):
 
         return total_days
 
-    # Change the month attribute value. 
+    # Set the month attribute value. 
     def set_month(self, month):
         if (type(month) is not int):
             raise TypeError("The month argument isn't an int!")
@@ -126,11 +126,11 @@ class Date(Year):
 
         self.month = month
 
-    # Change the month attribute to the current UTC month.
+    # Set the month attribute to the current UTC month.
     def set_month_UTC(self):
         self.month = datetime.utcnow().month
 
-    # Change the day attribute value.
+    # Set the day attribute value.
     def set_day(self, day):
         if (type(day) is not int):
             raise TypeError("The day argument isn't an int!")
@@ -140,7 +140,7 @@ class Date(Year):
 
         self.day = day
 
-    # Change the day attribute to the current UTC day.
+    # Set the day attribute to the current UTC day.
     def set_day_UTC(self):
         self.day = datetime.utcnow().day
 
@@ -189,7 +189,7 @@ class Time:
     def get_second(self):
         return self.second
 
-    # Change the hour attribute value. 
+    # Set the hour attribute value. 
     def set_hour(self, hour):
         if (type(hour) is not int):
             raise TypeError("The hour argument isn't an int!")
@@ -199,11 +199,11 @@ class Time:
 
         self.hour = hour
 
-    # Change the hour attribute to the current UTC hour.
+    # Set the hour attribute to the current UTC hour.
     def set_hour_UTC(self):
         self.hour = datetime.utcnow().hour
 
-    # Change the minute attribute value.
+    # Set the minute attribute value.
     def set_minute(self, minute):
         if (type(minute) is not int):
             raise TypeError("The minute argument isn't an int!")
@@ -213,11 +213,11 @@ class Time:
 
         self.minute = minute
     
-    # Change the minute attribute to the current UTC minute.
+    # Set the minute attribute to the current UTC minute.
     def set_minute_UTC(self):
         self.minute = datetime.utcnow().minute
 
-    # Change the second attribute value.
+    # Set the second attribute value.
     def set_second(self, second):
         if (type(second) is not int):
             raise TypeError("The second argument isn't an int!")
@@ -227,7 +227,7 @@ class Time:
 
         self.second = second
 
-    # Change the second attribute to the current UTC second.
+    # Set the second attribute to the current UTC second.
     def set_second_UTC(self):
         self.second = datetime.utcnow().second
 
@@ -256,7 +256,7 @@ class DateTime(Date, Time):
         Date.__init__(self, year, month, day)
         Time.__init__(self, hour, minute, second)
 
-    # Change year, month, day, hour, minute, and second attributes to current UTC values.
+    # Set second, minute, hour, day, month, and year attribute values to current UTC values.
     def set_UTC(self):
         DateTime.set_year_UTC(self)
         DateTime.set_month_UTC(self)
@@ -266,7 +266,7 @@ class DateTime(Date, Time):
         DateTime.set_second_UTC(self)
 
     '''
-        Set second, minute, hour, day, month, and year values within to timezone indicated in the argument.
+        Set second, minute, hour, day, month, and year attribute values to values of timezone indicated in the argument.
             The 'timezone' argument must be a string.
             Values for the 'timezone' argument can be the following acronyms (Not Case Sensitive):
                 - AST => (Atlantic Standard Time UTC-04:00)

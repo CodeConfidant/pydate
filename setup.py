@@ -5,7 +5,7 @@ from pathlib import Path
 
 setup(
     name='pydate',
-    version='1.1.9',
+    version='1.2.0',
     packages=find_packages(),
     license='MIT',
     description='Python package made to set, parse, & format DateTime objects.',

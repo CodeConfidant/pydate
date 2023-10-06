@@ -45,7 +45,7 @@
             <code>set_year(year)</code>
         </td>
 		<td>
-            Change the year attribute value.
+            Set the year attribute value.
         </td>
 	</tr>
     <tr>
@@ -53,7 +53,7 @@
             <code>set_year_UTC()</code>
         </td>
 		<td>
-            Change the year attribute to the current UTC year.
+            Set the year attribute to the current UTC year.
         </td>
 	</tr>
     <tr>
@@ -136,7 +136,7 @@
             <code>set_month(month)</code>
         </td>
 		<td>
-            Change the month attribute value.
+            Set the month attribute value.
         </td>
 	</tr>
     <tr>
@@ -144,7 +144,7 @@
             <code>set_month_UTC()</code>
         </td>
 		<td>
-            Change the month attribute to the current UTC month.
+            Set the month attribute to the current UTC month.
         </td>
 	</tr>
     <tr>
@@ -152,7 +152,7 @@
             <code>set_day(day)</code>
         </td>
 		<td>
-            Change the day attribute value.
+            Set the day attribute value.
         </td>
 	</tr>
     <tr>
@@ -160,7 +160,7 @@
             <code>set_day_UTC()</code>
         </td>
 		<td>
-            Change the day attribute to the current UTC day.
+            Set the day attribute to the current UTC day.
         </td>
 	</tr>
     <tr>
@@ -242,7 +242,7 @@
             <code>set_hour(hour)</code>
         </td>
 		<td>
-            Change the hour attribute value.
+            Set the hour attribute value.
         </td>
 	</tr>
     <tr>
@@ -250,7 +250,7 @@
             <code>set_hour_UTC()</code>
         </td>
 		<td>
-            Change the hour attribute to the current UTC hour.
+            Set the hour attribute to the current UTC hour.
         </td>
 	</tr>
     <tr>
@@ -258,7 +258,7 @@
             <code>set_minute(minute)</code>
         </td>
 		<td>
-            Change the minute attribute value.
+            Set the minute attribute value.
         </td>
 	</tr>
     <tr>
@@ -266,7 +266,7 @@
             <code>set_minute_UTC()</code>
         </td>
 		<td>
-            Change the minute attribute to the current UTC minute.
+            Set the minute attribute to the current UTC minute.
         </td>
 	</tr>
     <tr>
@@ -274,7 +274,7 @@
             <code>set_second(second)</code>
         </td>
 		<td>
-            Change the second attribute value.
+            Set the second attribute value.
         </td>
 	</tr>
     <tr>
@@ -282,7 +282,7 @@
             <code>set_second_UTC()</code>
         </td>
 		<td>
-            Change the second attribute to the current UTC second.
+            Set the second attribute to the current UTC second.
         </td>
 	</tr>
     <tr>
@@ -315,7 +315,7 @@
             <code>set_UTC()</code>
         </td>
 		<td>
-            Change year, month, day, hour, minute, and second attributes to current UTC values.
+            Set second, minute, hour, day, month, and year attribute values to current UTC values.
         </td>
 	</tr>
     <tr>
@@ -323,7 +323,7 @@
             <code>set_timezone(timezone)</code>
         </td>
 		<td>
-            Set second, minute, hour, day, month, and year values within to timezone indicated in the argument.
+            Set second, minute, hour, day, month, and year attribute values to values of timezone indicated in the argument.
             The 'timezone' argument must be a string. <br/>
             Values for the 'timezone' argument can be the following acronyms (Not Case Sensitive): <br/>
                 - AST => (Atlantic Standard Time UTC-04:00) <br/>
